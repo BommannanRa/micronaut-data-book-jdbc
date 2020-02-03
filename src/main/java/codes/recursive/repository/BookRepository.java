@@ -15,7 +15,7 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     List<Book> findByPagesGreaterThanAndPagesLessThan(int start, int end);
     List<Book> findByTitleLike(String title);
     // The next line throws a compilation error:
-    // List<Book> findByTitleILike(String title);
+    List<Book> findByTitleIlike(String title);
     // Unable to implement Repository method: BookRepository.findByTitleILike(String title). Cannot query entity [Book] on non-existent property: titleILike
     // List<Book> findByTitleILike(String title);
 }

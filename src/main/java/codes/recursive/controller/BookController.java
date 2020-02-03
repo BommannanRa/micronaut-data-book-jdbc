@@ -41,7 +41,14 @@ public class BookController {
     @Get("/title/{title}")
     public HttpResponse getByTitleLike(String title) {
         return HttpResponse.ok(
-                bookRepository.findByTitleLike(title)
+                bookRepository.findByTitleLike("%" + title + "%")
+        );
+    }
+
+    @Get("/title/ilike/{title}")
+    public HttpResponse getByTitleILike(String title) {
+        return HttpResponse.ok(
+                bookRepository.findByTitleIlike("%" + title + "%")
         );
     }
 }
